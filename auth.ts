@@ -9,7 +9,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     adapter: PrismaAdapter(prisma),
     providers: [
         Google({
-            clientId: process.env.AUTH_GOOGLE_ID,
+            clientId: "1082261792480-rqk6cvbarn68m2rm2taejlfk9m0en0a8.apps.googleusercontent.com",
             clientSecret: process.env.AUTH_GOOGLE_SECRET,
             authorization: {
                 params: {
