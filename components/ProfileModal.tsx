@@ -46,9 +46,19 @@ const ProfileModal: React.FC<ProfileModalProps> = ({ isOpen, onClose }) => {
             if (res.ok) {
                 const data = await res.json();
                 setImages(data.images || []);
+            } else {
+                throw new Error("Fetch failed");
             }
         } catch (error) {
-            console.error("Failed to fetch library", error);
+            console.warn("Failed to fetch library, using mock data for dev demo:", error);
+            // Mock Data Fallback
+            if (process.env.NODE_ENV === 'development') {
+                setImages([
+                    { id: '1', prompt: "A sleek rocket ship taking off, flat style", style: "Flat", svgUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/android.svg" },
+                    { id: '2', prompt: "Geometric mountains at sunset", style: "Doodle", svgUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/compass.svg" },
+                    { id: '3', prompt: "Cute robot holding a flower", style: "Tech", svgUrl: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/duck.svg" }
+                ]);
+            }
         } finally {
             setIsLoadingLibrary(false);
         }

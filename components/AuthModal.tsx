@@ -39,7 +39,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLogin }) => {
                         </div>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-slate-900 mb-2">Welcome back</h2>
+                    <h2 className="text-2xl font-bold text-slate-900 mb-2">Unlock your creative studio</h2>
                     <p className="text-gray-600 mb-8">Sign in to save your assets and manage credits.</p>
 
                     <div className="flex flex-col gap-3 w-full mb-8">
