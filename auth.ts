@@ -6,6 +6,7 @@ import MicrosoftEntraId from "next-auth/providers/microsoft-entra-id";
 import { prisma } from "@/app/lib/prisma";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+    debug: true,
     adapter: PrismaAdapter(prisma),
     providers: [
         Google({
