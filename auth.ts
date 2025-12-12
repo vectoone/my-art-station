@@ -7,7 +7,7 @@ import { prisma } from "@/app/lib/prisma";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     debug: true,
-    adapter: PrismaAdapter(prisma),
+    // adapter: PrismaAdapter(prisma),
     providers: [
         Google({
             clientId: "1082261792480-rqk6cvbarn68m2rm2taejlfk9m0en0a8.apps.googleusercontent.com",
